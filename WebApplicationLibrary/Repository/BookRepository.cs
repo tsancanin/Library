@@ -29,7 +29,7 @@ namespace WebApplicationLibrary.Repository
 
         public void Create(Book book)
         {
-            _libraryContext.Books.Entry(book);
+            _libraryContext.Books.Add(book);
             _libraryContext.SaveChanges();
         }
         public void Delete(Book book)

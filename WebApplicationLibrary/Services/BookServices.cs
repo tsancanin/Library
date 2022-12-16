@@ -58,14 +58,16 @@ namespace WebApplicationLibrary.Services
             };
         }
 
-        public DtoBook AddBook(int id, CreateOrEditBook create)
+        public DtoBook? CreateBook(int id, CreateOrEditBook create)
         {
             var book = new Book()
             {
                 Id = id,
                 Title = create.Title,
             };
+
             bookRepository.Create(book);
+
             return new DtoBook()
             {
                 Id = book.Id,

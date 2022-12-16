@@ -23,5 +23,37 @@ namespace WebApplicationLibrary.Controllers
             return Ok(allBooks);
         }
 
+        [HttpGet("GetById")]
+
+        public ActionResult<DtoBook> GetById(int id)
+        {
+            var book = _book.BookGetById(id);
+            return Ok(book);
+        }
+
+        [HttpPut("EditBook")]
+
+        public ActionResult<DtoBook> UpdateBook (int id, CreateOrEditBook book)
+        {
+            var updateBook = _book.EditBook(id, book);
+            return Ok(updateBook);
+
+        }
+
+        [HttpPost("AddBook")]
+
+        public ActionResult<DtoBook> AddBook(int id,CreateOrEditBook book)
+        {
+            var newBook = _book.CreateBook(id, book);
+            return Ok(newBook);
+        }
+
+        [HttpDelete("Delete")]
+
+        public ActionResult DeleteBook(int id, CreateOrEditBook book)
+        {
+            _book.DeleteBook(id, book);
+            return Ok();
+        }
     }
 }

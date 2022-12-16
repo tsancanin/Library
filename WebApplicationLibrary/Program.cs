@@ -14,6 +14,8 @@ builder.Services.AddScoped<AuthorServices>();
 builder.Services.AddScoped<AuthorRepository>();
 builder.Services.AddScoped<BookServices>();
 builder.Services.AddScoped<BookRepository>();
+builder.Services.AddScoped<MemberServices>();
+builder.Services.AddScoped<MemberRepository>();
 
 
 builder.Services.AddControllers();
